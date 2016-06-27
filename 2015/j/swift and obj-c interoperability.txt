@@ -1,0 +1,4 @@
+Generated Interface shows swift generated headers
+look at kindof type
+look at new type definitions for dictionaries and collection types
+look at new nullability indicators 

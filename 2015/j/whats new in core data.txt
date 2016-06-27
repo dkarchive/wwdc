@@ -1,0 +1,90 @@
+API Changes
+	NSManged Object
+		hasPersistentChangedValues
+			hasChanges - previiously
+			no false positives,
+		objectIDsForRelationshipNamed:String
+			reads cache or feches the objectIDs
+	NSManagedObjectContext
+		refreshes all objects, but preserves unsaved changes
+
+		mergeChangesFromRemoteContextSave
+			better for changes from different coordinateors
+
+  ***** shouldDeleteInaccessibleFaults
+			if fault is encoutreed it will be marked as seleted
+			missing data treated as NUll/nil/0
+			Core Data Faults
+				object doesn't exist on disk
+
+ 	destroyPersistentStoreAtURL
+ 		detroy the persistent store
+ 		handles details
+
+ 	replacePersistentStoreAtURL
+ 		copy data to destination
+
+ 	Unique Constraints
+ 		Find or Create pattern
+ 			look for object first, if exists, update, else create
+ 			not thread safe pattern
+ 		Set Unique attribuets across all instances of an entity
+ 			make sure it is unique across all instances
+ 			these are sent once, and never changed later
+ 		recovery uses merge policies
+
+ 		sub-entity ineheirients unique constraints
+
+ 		set unique field in model editor once entity is selected
+
+ 	NSBatchDeleteRequest
+ 		works directly on persistence store
+ 			use predicates or sorts or offset/limit to mark for deletion
+ 				returns success/failure count of objects deleted, object IDs deleted
+ 		no validation rules are enforced, no object notifications
+
+
+ 	Model Versioning
+ 		model changes
+ 			automatic lightweight migrations should work
+ 			model caching
+ 			the managed object model is cached into the persistence store
+ 				only available for sqlite stores
+
+ 	API Modernization
+ 		Generic + nullability updates
+ 		__kindof allows for easier casting
+ 			only can be downcast to subtypes of that type
+
+ 		generated subclasses changes
+ 			Subclass+NSMangedProperties.h or .swift
+ 			header is yours to own, all you have to do is updated +
+
+ 		Concurrency is dead, long live queues
+ 			init(with concurrency Type)
+ 				PrivateQueueConcurrencyType
+ 				MainQueueConcurrencyType
+ 		WWDC11 talk review for block API
+
+ 	Core Data Performance
+ 		models get more complex
+ 		stores get larger
+ 		queries get more interesting
+
+ 		1) Relationship Faults
+ 			prefetch objects you are going to use
+ 		2) Large Fetches
+ 			Fetch duration + Fetch Count
+ 			add batch size to fetch request
+ 		3) Complex Fetches
+ 			-com.apple.CoreData.SQLDebug 1
+ 			lareger time/count ratio
+ 			connect to store with SQLITE-> EXPLAIN QUERY PLAN 
+ 			
+ 			Note: SCAN TABLE and USE TEMP B-TREE (store buitl in memory for sorting or fetching)
+
+ 			Add Indexes in Model under selected entity
+
+ 			- Try To get off the main thread
+ 				use private queue context
+ 			- Try to use NSAsynchronusFetchRequest

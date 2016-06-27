@@ -1,0 +1,34 @@
+do-while renamed to repeat
+option sets defined with [] brackets
+	OptionSetType Protocol
+uniform function declarations
+
+underscores disable argument labels
+
+@testable declaration
+new version of swift programming book
+
+pattern matching
+	guard statement
+	compound conditional support
+
+	if case
+	for in where
+	for case in
+
+method availability
+	compiler checks min deployment target
+	if #available(OS 10.10.3, *)
+	{
+		apply new api usage
+	}
+	also compatible with guard statement
+
+protocol extensions
+	extension, etends protocol
+	extend collectionType, not Array (All collections conform to collectionType)
+
+error handling
+	defer statement
+		called at the end of the current scope regardless of throw, return, break etc...
+	see cocoa examples with the try example

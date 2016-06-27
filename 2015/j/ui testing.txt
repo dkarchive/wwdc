@@ -1,0 +1,20 @@
+UI Testing
+	test interact with the app just the way users do
+	depends on new OS features
+		needs iOS 9
+		needs OSX 10.11
+		needs to be enabled for development with permissions
+
+	Getting Started
+		new target type
+			execute in a seperate process
+			permission to use accesibility
+			Target to be Tested: for UI Test bundles
+		APIs
+			XCUIApplication
+			XCUIElement
+		UI Recording
+			Interact with your app
+			Recording generates the code
+				create new tests
+				expand existing tests

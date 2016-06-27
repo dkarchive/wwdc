@@ -1,0 +1,32 @@
+network security
+	TLS is a min basline to protect users
+	TLS1.2 forward secrency using specific cipher suites
+
+app transport security
+	if you link your app against iOS 9.
+	It won't be able to make any unprotected HTTP connections
+
+System Integrity Protection
+	Defense In Depth
+		security is about layers
+		one layer failing shouldn't defeat all security
+		rely on multiple layers with different properties to reduce attack surface
+	OSX
+		DeveloperID and Gatekeeper
+			downloaded apps must be signed by a dev that is registered with Apple
+		Sandbox
+			App Sandbox
+			Even if app is exploited, app only has access to data that the user has given to the app
+		POSIX
+			classic posix permission scheme
+			app only runs with permission level of the user it is running as
+		Keychain
+			protect the users secret (app seperation + encryption)
+
+		New: system integrity protection
+			applies to every process
+			extends additional protections to system components on disk and at runtime
+
+	To Disable System Integrity Protection Security Configration utility in recovery OS (option + R)
+
+

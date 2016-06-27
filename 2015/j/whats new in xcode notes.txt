@@ -1,0 +1,84 @@
+Xcode 7
+- support for swift 2
+	error handling syntax
+	new availablilty flag
+	test bundle support for internal api
+	extend protocol
+	swift migrator
+		migrate code
+
+- OBC additions
+	generics with type information for collections
+	nil and not nill declatation support for values
+
+- Playgrounds
+	rich comments in playgrounds - markup support
+	pull results into the source code
+	supporting sources folder - pre compiled as support
+	page support that progressive content like teaching tools
+	great teaching material
+
+- Watch OS
+	- new complications
+	- app runs directly on the watch
+- iOS 9
+	-stack view
+	- size classes 
+	- app thinning
+- App thinning
+	- Bitcode
+		sent up to the store
+		appstore reoptimizes the bitcode
+		magic behind the scenes
+	- Slicing
+		xocde will only include artwork that is needed for that device
+		only the required device
+		on demand resources
+			progressivly download levels as needed
+		- xcode 7 and use asset catalog
+			support for arbitrary data
+			- configure slots for device specilizations
+			- resource that best suits it is deployed
+		- On demand hosting
+			- tag data NSBundleResourceRequest Class
+			- Set On Demand Rouce Tags on folder or image/data assets,sprite atlas, loose files
+			- project editor, new resource tags section
+			- Disk gauge profileing, new on demand resources section
+				- status will change to show what has been downloaded, in use, not downloaded
+
+- Enegy Report section
+- new location instrument
+- new metal system trace
+	- see frame rate performance 
+- Address Sanitizer
+	- compiles code in a way to find buffer overflows
+	- scheme editor, optin + run
+	- set tools in diagnostics tab
+		- enable address sanitizer
+			- recompiles app with more instrumentation.
+	- shows that deallocated memory is being called
+	- new memory section that shows
+	- can show call stack and when object was allocated and memory was deallocated
+	- underflow/overflow, heap and stack memory
+	- see what's new in LLDB and Advanced Debugging and the address sanitizer
+- Crash Logs
+	- fully symbolicated
+	- downloaded into xcode from the organizer window
+	- select Build from build tab
+	- sorted by frequently occuring crashes
+	- mark crashes as resolved by clicking circle
+	- open in project, select project and click open
+		- crash is added to the debug navigator
+
+- Testing
+	- UI Testing
+		- run on xcode server
+	- Code Coverage for testing
+		- enable in schemes under test action
+		- Gather coverage data
+	- code coverage bar on the right side of the source code
+	- set cursor in test/method/function, then hit record
+	- as you tab buuttons in UI, the code that triggers the path will be recorded into the method
+	- Add assertions that verify the final UI contains the elements/assets that would work well
+	
+

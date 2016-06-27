@@ -1,0 +1,58 @@
+Mac Address changes prior to authentication has randomers
+App Detection
+	the apps that a user has installed are their business
+	canOpenURL is changing
+		LSApplicationQueriesSchemes
+			urlschemes
+				need to declare them in app info.plist
+				if not decalared, it will return no...
+	Universal Links
+		If app not installed, it will open in safari
+	sysctl()
+		sets system information
+		allows processes with appropriate privlieges to see information
+		- in iOS 9 kern.proc, kern.procargs, and kern.procars2 on any other process other than self
+	Content Blocker Extension
+
+OSX Cookie Policy Change
+	- In El Capitan, cookies are local to a single process and are not shared
+	- Webclips or Dashboard widgets need to retest
+
+Watch OS
+	- Keychain items on paired iPhone sync to watch shared
+	- Identifiers
+
+Set Protection Strings in the info.plist to customize teh request access alert text to explain WHY you need access
+
+On Watch KIT, users must answer privacy prompt on the iPHone, not on the watch
+
+Privacy settings are shared between the watch and the app
+
+App Transport Security
+	NSURLErrorAppTransportSecurityRequiresSecureConnection
+		see Networking with NSURLSession
+	throws an error on insecure connections
+	defined in the info.plist of the app
+
+Deep App Search
+	NSUserActivity
+		added in iOS 8, extended in 9 to create views of your app to be indexed for the user to search and resume an activity
+		handoff to the futre
+		eligibleForSearch and eligebleForPublicIndexing and set expirationDate
+
+
+	Core Spotlight
+	see introduicng app search
+
+Data Protection
+	keys that are derivied from the users pascode
+	per-file encryption
+	multiple levels of protection
+	NSFileProtectionCompleteUntilFirstUserAuthentication - All Apps protected by this level by default
+	NSFileProtectionNone - never encrypted
+	NSFileProtectionCompleteUnlessOpen - read and write access - read is locked, but can still lock
+	NSFileProtectionComplete - only available while device is locked
+
+
+
+
